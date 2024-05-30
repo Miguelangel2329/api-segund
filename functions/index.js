@@ -43,5 +43,5 @@ app.delete("/api/ajenciera/:id", (req, res) => {
     res.send(ajencier);
 });
 
-// Exportar la aplicación como una función serverless
 module.exports.handler = serverless(app);
+
