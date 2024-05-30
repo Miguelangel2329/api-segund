@@ -1,8 +1,8 @@
-[build]
-functions = "functions"
-publish = "build"
+[construir]
+  funciones = "funciones"
+  publicar = "."
 
-[[redirects]]
-from = "/*"
-to = "/.netlify/functions/index"
-status = 200
+[[Redirige]]
+  De = "/*"
+  to = "/.netlify/funciones/índice"
+  estado = 200
