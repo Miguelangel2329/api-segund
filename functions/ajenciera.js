@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const ajenciera = [
+let ajenciera = [
     { id: 1, name: "jorge", age: 20, enroll: true },
     { id: 2, name: "Luis", age: 21, enroll: true }
 ];
@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
     res.send(ajenciera);
 });
 
-router.post("/:id", (req, res) => {
+router.get("/:id", (req, res) => {
     const ajencier = ajenciera.find(c => c.id === parseInt(req.params.id));
     if (!ajencier) return res.status(404).send("Ajenciera no encontrado");
     res.send(ajencier);
@@ -24,6 +24,17 @@ router.post("/", (req, res) => {
         enroll: req.body.enroll === "true"
     };
     ajenciera.push(ajencier);
+    res.send(ajencier);
+});
+
+router.put("/:id", (req, res) => {
+    const ajencier = ajenciera.find(c => c.id === parseInt(req.params.id));
+    if (!ajencier) return res.status(404).send("Ajenciera no encontrado");
+
+    ajencier.name = req.body.name;
+    ajencier.age = parseInt(req.body.age);
+    ajencier.enroll = req.body.enroll === "true";
+
     res.send(ajencier);
 });
 
