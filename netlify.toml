@@ -2,7 +2,8 @@
   funciones = "funciones"
   publicar = "."
 
-[[Redirige]]
-  De = "/*"
-  to = "/.netlify/funciones/índice"
-  estado = 200
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/index.js"
+  status = 200
+  force = true
